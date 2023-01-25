@@ -1,16 +1,18 @@
 import { StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { TextInput } from 'react-native'
+import FocusedStatusBar from '../components/Home/FocusedStatusBar'
 
 const Register = () => {
   return (
     <SafeAreaView>
+      <FocusedStatusBar/>
       <Text>Register</Text>
       <TextInput  style = {styles.input} placeholder = "Name"/>
       <TextInput  style = {styles.input} placeholder = "Email"/>
       <TextInput  style = {styles.input} placeholder = "Password"/>
       <TouchableOpacity style={styles.button}>
-        <text>Sign In</text>
+        <Text>Sign In</Text>
       </TouchableOpacity>
     </SafeAreaView>
   )
@@ -25,6 +27,7 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       padding: 10,
       borderRadius: 10,
+      backgroundColor:"#a4c3a2"
     },
     button:{
         alignItems: 'center',
