@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import LoginContainer from '../components/LoginContainer'
-=======
-import { StyleSheet, Text, SafeAreaView, TouchableOpacity,TextInput } from 'react-native'
+import { StyleSheet, Text, View,SafeAreaView, TouchableOpacity,TextInput } from 'react-native'
 import {React, useState} from 'react'
+import FocusedStatusBar from '../components/Home/FocusedStatusBar';
 
 const LoginContainer=()=>{
         const [email, setemail] = useState('');
@@ -15,25 +11,19 @@ const LoginContainer=()=>{
             console.log(email, password);
         }
     return (
-        <SafeAreaView style={style1.container}>
-            <Text style={style1.headingForInput}>Please enter your email</Text>
+        <View style={style1.container}>
 
             <TextInput 
                 style={style1.text_input} 
-                placeholder="user@gmail.com"
+                placeholder="Please enter your email"
                 onChange={text => setemail({ text })}
                 value={email}/>
-
-            <Text 
-                style={style1.headingForInput}>
-                Please enter your password
-            </Text>
 
             <TextInput 
                 style={style1.text_input} 
                 value={password}
                 onChange={text=>setpassword({text})} 
-                placeholder="Password"/>
+                placeholder="Enter password"/>
 
             <TouchableOpacity 
                 style={style1.forgot_button}>
@@ -45,35 +35,41 @@ const LoginContainer=()=>{
                 onPress={handle_submit}>
                 <Text>Login</Text>  
             </TouchableOpacity>
-        </SafeAreaView>
+        </View>
     )
 };
 
 const style1 = StyleSheet.create({
     container:{
         margintop:100,
+        backgroundColor:"#DDDDDD",
+        borderRadius:20,
+        padding:20
     },
     text_input:{
-        height: 50,
-        flex: 1,
-        padding: 10,
-        marginLeft: 20,
-        alignItems:"center",
-        justifyContent:"center",
-        borderRadius
+        height: 40,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
+      borderRadius: 10,
+      backgroundColor:"#a4c3a2"
     },
     forgot_button: {
+        position:"relative",
+        justifyContent:"center",
+        alignItems:"center",
         height: 30,
         margin: 30,
+        borderRadius:15
     },
     login_button: {
-        width:"80%",
+        position:"relative",
+        width:"100%",
         borderRadius:25,
         height:50,
         alignItems:"center",
         justifyContent:"center",
-        marginTop:40,
-        backgroundColor:"#a4c3a2",
+        backgroundColor:"white",
     },
     headingForInput:{
         margin:20,
@@ -82,10 +78,13 @@ const style1 = StyleSheet.create({
     }
 })
 
->>>>>>> Stashed changes
 const Login = () => {
   return (
+    <SafeAreaView>
+        <FocusedStatusBar/>
+    <Text>Login Page</Text>
     <LoginContainer/>
+    </SafeAreaView>
   )
 }
 
