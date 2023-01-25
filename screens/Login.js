@@ -12,24 +12,18 @@ const LoginContainer=()=>{
         }
     return (
         <View style={style1.container}>
-            <Text style={style1.headingForInput}>Please enter your email</Text>
 
             <TextInput 
                 style={style1.text_input} 
-                placeholder="user@gmail.com"
+                placeholder="Please enter your email"
                 onChange={text => setemail({ text })}
                 value={email}/>
-
-            <Text 
-                style={style1.headingForInput}>
-                Please enter your password
-            </Text>
 
             <TextInput 
                 style={style1.text_input} 
                 value={password}
                 onChange={text=>setpassword({text})} 
-                placeholder="Password"/>
+                placeholder="Enter password"/>
 
             <TouchableOpacity 
                 style={style1.forgot_button}>
@@ -48,29 +42,33 @@ const LoginContainer=()=>{
 const style1 = StyleSheet.create({
     container:{
         margintop:100,
-        backgroundColor:"#a4c3a2",
+        backgroundColor:"#DDDDDD",
         borderRadius:20,
         padding:20
     },
     text_input:{
-        height:100,
-        padding: 10,
-        alignItems:"center",
-        justifyContent:"center",
-        borderRadius:20,
-        backgroundColor:"white"
+        height: 40,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
+      borderRadius: 10,
+      backgroundColor:"#a4c3a2"
     },
     forgot_button: {
+        position:"relative",
+        justifyContent:"center",
+        alignItems:"center",
         height: 30,
         margin: 30,
+        borderRadius:15
     },
     login_button: {
-        width:"80%",
+        position:"relative",
+        width:"100%",
         borderRadius:25,
         height:50,
         alignItems:"center",
         justifyContent:"center",
-        marginTop:40,
         backgroundColor:"white",
     },
     headingForInput:{
