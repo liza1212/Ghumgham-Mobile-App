@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import LoginContainer from '../components/LoginContainer'
-=======
-import { StyleSheet, Text, SafeAreaView, TouchableOpacity,TextInput } from 'react-native'
+import { StyleSheet, Text, View,SafeAreaView, TouchableOpacity,TextInput } from 'react-native'
 import {React, useState} from 'react'
+import FocusedStatusBar from '../components/Home/FocusedStatusBar';
 
 const LoginContainer=()=>{
         const [email, setemail] = useState('');
@@ -15,7 +11,7 @@ const LoginContainer=()=>{
             console.log(email, password);
         }
     return (
-        <SafeAreaView style={style1.container}>
+        <View style={style1.container}>
             <Text style={style1.headingForInput}>Please enter your email</Text>
 
             <TextInput 
@@ -45,22 +41,24 @@ const LoginContainer=()=>{
                 onPress={handle_submit}>
                 <Text>Login</Text>  
             </TouchableOpacity>
-        </SafeAreaView>
+        </View>
     )
 };
 
 const style1 = StyleSheet.create({
     container:{
         margintop:100,
+        backgroundColor:"#a4c3a2",
+        borderRadius:20,
+        padding:20
     },
     text_input:{
-        height: 50,
-        flex: 1,
+        height:100,
         padding: 10,
-        marginLeft: 20,
         alignItems:"center",
         justifyContent:"center",
-        borderRadius
+        borderRadius:20,
+        backgroundColor:"white"
     },
     forgot_button: {
         height: 30,
@@ -73,7 +71,7 @@ const style1 = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         marginTop:40,
-        backgroundColor:"#a4c3a2",
+        backgroundColor:"white",
     },
     headingForInput:{
         margin:20,
@@ -82,10 +80,13 @@ const style1 = StyleSheet.create({
     }
 })
 
->>>>>>> Stashed changes
 const Login = () => {
   return (
+    <SafeAreaView>
+        <FocusedStatusBar/>
+    <Text>Login Page</Text>
     <LoginContainer/>
+    </SafeAreaView>
   )
 }
 
