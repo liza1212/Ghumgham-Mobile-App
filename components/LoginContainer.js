@@ -76,12 +76,4 @@ const style1 = StyleSheet.create({
     }
 })
 
-const Login = () => {
-  return (
-    <LoginContainer/>
-  )
-}
-
-
-
-export default Login
+export default LoginContainer
