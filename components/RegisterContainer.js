@@ -2,7 +2,7 @@ import { StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { TextInput } from 'react-native'
 
-const Register = () => {
+const RegisterContainer = () => { 
   return (
     <SafeAreaView>
       <Text>Register</Text>
@@ -16,7 +16,7 @@ const Register = () => {
   )
 }
 
-export default Register
+export default RegisterContainer
 
 const styles = StyleSheet.create({
     input: {
