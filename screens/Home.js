@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native'
 import React from 'react'
-import NavBar from './Home/NavBar'
-import Content from './Home/Content'
-import Footer from './Home/Footer'
-import FocusedStatusBar from './Home/FocusedStatusBar'
+import FocusedStatusBar from "../components/Home/FocusedStatusBar"
+import NavBar from "../components/Home/NavBar"
+import Footer from "../components/Home/Footer"
+import Content from "../components/Home/Content"
 
 const Home = () => {
   return (
