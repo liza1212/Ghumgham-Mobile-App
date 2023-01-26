@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View,SafeAreaView, TouchableOpacity,TextInput } from 'react-native'
-import {React, useState} from 'react'
+import React, {useState} from 'react'
 import FocusedStatusBar from '../components/Home/FocusedStatusBar';
 
 const LoginContainer=()=>{
@@ -16,13 +16,13 @@ const LoginContainer=()=>{
             <TextInput 
                 style={style1.text_input} 
                 placeholder="Please enter your email"
-                onChange={text => setemail({ text })}
-                value={email}/>
+                onChangeText={txt => setemail({ email:txt })}
+                />
 
             <TextInput 
                 style={style1.text_input} 
-                value={password}
-                onChange={text=>setpassword({text})} 
+                // defaultValue={text}
+                onChangeText={txt=>setpassword({password:txt})} 
                 placeholder="Enter password"/>
 
             <TouchableOpacity 
