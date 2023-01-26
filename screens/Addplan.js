@@ -1,28 +1,53 @@
 import { StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useState } from 'react';
 import { TextInput } from 'react-native'
-import FocusedStatusBar from '../components/Home/FocusedStatusBar'
-import { useFonts } from 'expo-font'
-import Ionicons from '@expo/vector-icons/Ionicons'
+// import FocusedStatusBar from '../components/Home/FocusedStatusBar'
+
 
 const Addplan = () => {
-  return (
-    <SafeAreaView style= {styles.container}>
-      <Text>Add New Plan</Text>
-      {/* <MainDetail> */}
-      <TextInput  style = {styles.input} placeholder = "Title"/>
-      <TextInput  style = {styles.input} placeholder = "From"/>
-      <TextInput  style = {styles.input} placeholder = "To"/>
-      {/* </MainDetail> */}
-    </SafeAreaView>
-  )
-}
+    const [title, settitle] = useState('');
+    const [destination, setdestination] = useState('');
+    const [days, setdays] = useState('');
+  
+    function handle_submit(event){
+      event.preventDefault();
+      console.log(title, destination, days);
+    }
+    return (
+      <SafeAreaView style={styles.container}>
+        {/* <FocusedStatusBar/> */}
+        <Text>Add New Plan</Text>
+  
+        {/* <TextInput  
+          style = {styles.input} 
+          onChange={text=>settitle({title:text})}
+          placeholder = "Title"/>
+  
+        <TextInput  
+          style = {styles.input} 
+          onChangeText={text=>setdestination({destination:text})}
+          placeholder = "Destination"/>
+  
+        <TextInput  
+          style = {styles.input} 
+          onChangeText={text=>setdays({days:text})}
+          placeholder = "Days"/>  */}
+  
+        {/* <TouchableOpacity 
+          style={styles.button}
+          onPress={handle_submit}>
+          <Text>Post</Text>
+        </TouchableOpacity> */}
+      </SafeAreaView>
+    )
+  }
 
 export default Addplan
 
 const styles = StyleSheet.create({
     container: {
-        flex: 0.5,
+        // flex: 0.5,
         // flexDirection: "row",
         width: "100%",
         justifyContent: 'center',
