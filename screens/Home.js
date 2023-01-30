@@ -2,7 +2,6 @@ import { StyleSheet, Text, View,SafeAreaView } from 'react-native'
 import React from 'react'
 import FocusedStatusBar from "../components/Home/FocusedStatusBar"
 import NavBar from "../components/Home/NavBar"
-import Footer from "../components/Home/Footer"
 import Content from "../components/Home/Content"
 
 const Home = () => {
@@ -11,7 +10,6 @@ const Home = () => {
       <FocusedStatusBar/>
       <NavBar/>
         <Content/>
-      <Footer/>
     </SafeAreaView>
   )
 }
