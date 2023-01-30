@@ -1,29 +1,52 @@
 import { StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import { TextInput } from 'react-native'
 import FocusedStatusBar from '../components/Home/FocusedStatusBar'
-import { useFonts } from 'expo-font'
 import Ionicons from '@expo/vector-icons/Ionicons'
 
 // const { width , height} = Dimensions.get("screen")
 // const [fontsLoaded] = useFonts({
 //   'Inter-Bold': require('./assets/fonts/Inter-Bold.otf'),
 // });
-const Register = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <FocusedStatusBar/>
-      {/* <Text style={{fontFamily: 'Inter-Bold', fontSize: 30}}>Register</Text> */}
-      <Ionicons name="md-person" size={32} color="green" />
-      <TextInput  style = {styles.input} placeholder = "Name"/>
-      <TextInput  style = {styles.input} placeholder = "Email"/>
-      <TextInput  style = {styles.input} placeholder = "Password"/>
-      <TouchableOpacity style={styles.button}>
-        <Text>Sign In</Text>
+const Register=()=>{
+  const [name, setname] = useState('');
+  const [email, setemail] = useState('');
+  const [password, setpassword] = useState('');
+
+  function handle_submit(event){
+      event.preventDefault();
+      console.log(name, email, password);
+  }
+return (
+  <SafeAreaView style={styles.container}>
+
+      <TextInput 
+          style={styles.input} 
+          placeholder="Name"
+          onChangeText={txt => setname({ name:txt })}
+          />
+
+      <TextInput 
+          style={styles.input} 
+          placeholder="Email"
+          onChangeText={txt => setemail({ email:txt })}
+          />
+
+      <TextInput 
+          style={styles.input} 
+          // defaultValue={text}
+          onChangeText={txt=>setpassword({password:txt})} 
+          placeholder="Enter password"/>
+
+
+      <TouchableOpacity 
+          style={styles.button}
+          onPress={handle_submit}>
+          <Text>Login</Text>  
       </TouchableOpacity>
-    </SafeAreaView>
-  )
-}
+  </SafeAreaView>
+)
+};
 
 export default Register
 

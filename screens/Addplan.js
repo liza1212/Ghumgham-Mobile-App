@@ -1,14 +1,15 @@
 import { StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { useState } from 'react';
+import React, {useState} from 'react'
 import { TextInput } from 'react-native'
-// import FocusedStatusBar from '../components/Home/FocusedStatusBar'
+import FocusedStatusBar from '../components/Home/FocusedStatusBar'
+import Slider from '@react-native-community/slider';
 
 
 const Addplan = () => {
     const [title, settitle] = useState('');
     const [destination, setdestination] = useState('');
     const [days, setdays] = useState('');
+    const [SliderValue, setSliderValue] = useState('');
   
     function handle_submit(event){
       event.preventDefault();
@@ -16,10 +17,10 @@ const Addplan = () => {
     }
     return (
       <SafeAreaView style={styles.container}>
-        {/* <FocusedStatusBar/> */}
+        <FocusedStatusBar/>
         <Text>Add New Plan</Text>
   
-        {/* <TextInput  
+        <TextInput  
           style = {styles.input} 
           onChange={text=>settitle({title:text})}
           placeholder = "Title"/>
@@ -32,13 +33,23 @@ const Addplan = () => {
         <TextInput  
           style = {styles.input} 
           onChangeText={text=>setdays({days:text})}
-          placeholder = "Days"/>  */}
+          placeholder = "Days"/> 
+
+        {/*Slider with max, min, step and initial value*/}
+        <Slider
+          maximumValue={100}
+          minimumValue={0}
+          minimumTrackTintColor="#307ecc"
+          maximumTrackTintColor="#000000"
+          step={1}
+          value={SliderValue}
+          onValueChange={SliderValue => setSliderValue(SliderValue)} />
   
-        {/* <TouchableOpacity 
+        <TouchableOpacity 
           style={styles.button}
           onPress={handle_submit}>
           <Text>Post</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
       </SafeAreaView>
     )
   }
