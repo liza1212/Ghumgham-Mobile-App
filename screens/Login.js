@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View,SafeAreaView, TouchableOpacity,TextInput } from 'react-native'
 import React, {useState} from 'react'
 import FocusedStatusBar from '../components/Home/FocusedStatusBar';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginContainer=()=>{
         const [email, setemail] = useState('');
         const [password, setpassword] = useState('');
+        const navigation = useNavigation()
 
         function handle_submit(event){
             event.preventDefault();
@@ -34,6 +36,12 @@ const LoginContainer=()=>{
                 style={style1.login_button}
                 onPress={handle_submit}>
                 <Text>Login</Text>  
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+                style={style1.forgot_button}
+                onPress={()=>navigation.navigate("Register")}> 
+                <Text>Don't have a account</Text> 
             </TouchableOpacity>
         </View>
     )

@@ -6,13 +6,15 @@ const RegisterContainer = () => {
   return (
     <SafeAreaView>
       <Text>Register</Text>
-      <TextInput  style = {styles.input} placeholder = "Name"/>
-      <TextInput  style = {styles.input} placeholder = "Email"/>
-      <TextInput  style = {styles.input} placeholder = "Password"/>
-      <TouchableOpacity style={styles.button}>
-        <text>Sign In</text>
-      </TouchableOpacity>
-    </SafeAreaView>
+      <View style={{color:"#DDDDDD",padding:10}}>
+        <TextInput  style = {styles.input} placeholder = "Name"/>
+        <TextInput  style = {styles.input} placeholder = "Email"/>
+        <TextInput  style = {styles.input} placeholder = "Password"/>
+        <TouchableOpacity style={styles.button}>
+          <text>Sign In</text>
+        </TouchableOpacity>
+      </View>
+      </SafeAreaView>
   )
 }
 
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
     },
     button:{
         alignItems: 'center',
-        backgroundColor: '#DDDDDD',
+        backgroundColor: 'white',
         padding: 10,
         fontWeight: 'bold',
         borderBottomRightRadius: 10,
