@@ -2,6 +2,7 @@ import { StyleSheet, Text, View,SafeAreaView, TouchableOpacity,TextInput } from 
 import React, {useState} from 'react'
 import FocusedStatusBar from '../components/Home/FocusedStatusBar';
 import { useNavigation } from '@react-navigation/native';
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const LoginContainer=()=>{
         const [email, setemail] = useState('');
@@ -13,6 +14,14 @@ const LoginContainer=()=>{
             console.log(email, password);
         }
     return (
+        <View>
+            
+        <View style={{padding:10,flexDirection:"row", justifyContent:"flex-start",alignItems:"center"}}>
+            <TouchableOpacity onPress={()=>{navigation.navigate("mHome")}}>
+                <Ionicons name="arrow-back" color="#a4c3a2" size={30} style={{width:50}} />
+            </TouchableOpacity>
+        </View>
+
         <View style={style1.container}>
 
             <TextInput 
@@ -44,6 +53,7 @@ const LoginContainer=()=>{
                 <Text>Don't have a account</Text> 
             </TouchableOpacity>
         </View>
+    </View>
     )
 };
 
