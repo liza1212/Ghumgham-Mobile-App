@@ -22,8 +22,8 @@ const Register = () => {
             <TouchableOpacity onPress={()=>{navigation.navigate("mHome")}}>
                 <Ionicons name="arrow-back" color="#a4c3a2" size={30} style={{width:50}} />
             </TouchableOpacity>
-        </View>
-      <Text>Register</Text>
+      </View>
+    <Text style={{fontFamily:"InterBold",fontSize:25,alignSelf:"center"}}>Register Page</Text>
     <View style={styles.container}>
     <TextInput  
         style = {styles.input} 

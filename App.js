@@ -29,14 +29,7 @@ function HomeStackScreen() {
   );
 }
 
-function MomenttackScreen() {
-  return (
-    <HomeStack.Navigator screenOptions={{headerShown:false}}>
-       <HomeStack.Screen name="mMoment" component={Moment} />           
-       <HomeStack.Screen name="Addplan" component={Addplan} />
-    </HomeStack.Navigator>
-   );
- }
+
 
 
 const Tab = createBottomTabNavigator()
@@ -66,6 +59,8 @@ export default function App() {
             iconName= focused?'list':'list-outline'
           }else if(rn==="Profile"){
             iconName= focused?'person-circle':'person-circle-outline'
+          }else if(rn==="Add plan"){
+            iconName= focused?'add-circle':'add-circle-outline'
           }
           return <Ionicons name={iconName} size={size} color={color}/>
         },
@@ -76,7 +71,8 @@ export default function App() {
       >
 
         <Tab.Screen name="Home" component={HomeStackScreen}/>
-        <Tab.Screen name="Moment" component={MomenttackScreen}/>
+        <Tab.Screen name="Moment" component={Moment}/>
+        <Tab.Screen name="Add plan" component={Addplan}/>
         <Tab.Screen name="Profile" component={Profile}/>
       </Tab.Navigator>
     </NavigationContainer>

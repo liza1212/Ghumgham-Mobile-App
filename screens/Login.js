@@ -100,7 +100,7 @@ const Login = () => {
   return (
     <SafeAreaView>
         <FocusedStatusBar/>
-    <Text>Login Page</Text>
+    <Text style={{fontFamily:"InterBold",fontSize:25,alignSelf:"center"}}>Login Page</Text>
     <LoginContainer/>
     </SafeAreaView>
   )
